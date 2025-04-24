@@ -24,16 +24,16 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td class="align-middle text-center">1</td>
-                                <td class="align-middle text-center">Phòng Chiếu 1</td>
-                                <td class="align-middle text-center">10</td>
-                                <td class="align-middle text-center">20</td>
+                            <tr v-for="(item, index) in list_phong_chieu" :key="index"  >
+                                <td class="align-middle text-center">{{ index + 1 }}</td>
+                                <td class="align-middle text-center">{{ item.ten_phong }}</td>
+                                <td class="align-middle text-center">{{ item.hang_doc }}</td>
+                                <td class="align-middle text-center">{{ item.hang_ngang }}</td>
                                 <td class="text-center align-middle">
-                                    <button class="btn btn-success" type="button">
+                                    <button v-if="item.tinh_trang == 1" class="btn btn-success" type="button">
                                         <i class="fa-solid fa-square-check"></i> Hoạt động
                                     </button>
-                                    <button class="btn btn-warning" type="button">
+                                    <button v-else class="btn btn-warning" type="button">
                                         <i class="fa-solid fa-square-xmark"></i> Ngưng hoạt động
                                     </button>
                                 </td>
@@ -67,19 +67,19 @@
                 <div class="modal-body">
                     <div class="mb-3">
                         <label for="tenPhong" class="form-label">Tên phòng chiếu</label>
-                        <input type="text" class="form-control" id="tenPhong" placeholder="Nhập tên phòng chiếu" />
+                        <input v-model="create_phong_chieu.ten_phong" type="text" class="form-control" id="tenPhong" placeholder="Nhập tên phòng chiếu" />
                     </div>
                     <div class="mb-3">
                         <label for="hangDoc" class="form-label">Hàng dọc</label>
-                        <input type="number" class="form-control" id="hangDoc" placeholder="Nhập số hàng dọc" />
+                        <input v-model="create_phong_chieu.hang_doc" type="number" class="form-control" id="hangDoc" placeholder="Nhập số hàng dọc" />
                     </div>
                     <div class="mb-3">
                         <label for="hangNgang" class="form-label">Hàng ngang</label>
-                        <input type="number" class="form-control" id="hangNgang" placeholder="Nhập số hàng ngang" />
+                        <input v-model="create_phong_chieu.hang_ngang" type="number" class="form-control" id="hangNgang" placeholder="Nhập số hàng ngang" />
                     </div>
                     <div class="mb-3">
                         <label for="isActive" class="form-label">Trạng thái</label>
-                        <select class="form-select" id="isActive">
+                        <select v-model="create_phong_chieu.tinh_trang" class="form-select" id="isActive">
                             <option value="">Chọn trạng thái</option>
                             <option value="1">Hoạt động</option>
                             <option value="0">Ngưng hoạt động</option>
@@ -90,7 +90,7 @@
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
                         Hủy
                     </button>
-                    <button type="button" class="btn btn-primary">Lưu</button>
+                    <button type="button" class="btn btn-primary" @click="themPhongChieu">Lưu</button>
                 </div>
             </div>
         </div>
@@ -170,6 +170,41 @@
     </div>
 </template>
 <script>
-export default {};
+import axios from 'axios';
+export default {
+    data() {
+        return {
+            list_phong_chieu: [],
+            create_phong_chieu: {
+                ten_phong: '',
+                hang_ngang: '',
+                hang_doc: '',
+                tinh_trang: '',
+            },
+        };
+    },
+    mounted() {
+        this.getListPhongChieu();
+    },
+    methods: {
+        getListPhongChieu() {
+            axios.get('http://localhost:8000/api/admin/phong-chieu/get-data')
+                .then(res => {
+                    this.list_phong_chieu = res.data.data;
+                });
+        },
+        themPhongChieu() {
+            axios.post('http://localhost:8000/api/admin/phong-chieu/add-data', this.create_phong_chieu)
+                .then(res => {
+                    if (res.data.status) {
+                        alert('Thêm phòng chiếu thành công');
+                        this.getListPhongChieu();
+                    } else {
+                        alert('Thêm phòng chiếu thất bại');
+                    }
+                });
+        },
+    },
+};
 </script>
 <style></style>

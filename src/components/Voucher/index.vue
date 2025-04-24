@@ -6,31 +6,31 @@
           <h5 class="card-title">Thêm Voucher</h5>
           <hr />
           <label class="mt-2">Mã Voucher</label>
-          <input class="form-control" type="text" />
+          <input v-model="create_voucher.ma_code" class="form-control" type="text" />
           <label class="mt-2">Thời gian bắt đầu</label>
-          <input class="form-control" type="date" />
+          <input v-model="create_voucher.thoi_gian_bat_dau" class="form-control" type="date" />
           <label class="mt-2">Thời gian kết thúc</label>
-          <input class="form-control" type="date" />
+          <input v-model="create_voucher.thoi_gian_ket_thuc" class="form-control" type="date" />
           <label class="mt-2">Loại giảm</label>
-          <select class="form-select" aria-label="Default select example">
+          <select v-model="create_voucher.loai_giam" class="form-select" aria-label="Default select example">
             <option selected>Chọn loại giảm</option>
             <option value="1">Giảm giá</option>
             <option value="0">Giảm tiền</option>
           </select>
           <label class="mt-2">Số giảm giá</label>
-          <input class="form-control" type="text" />
+          <input v-model="create_voucher.so_giam_gia" class="form-control" type="text" />
           <label class="mt-2">Số tiền tối đa</label>
-          <input class="form-control" type="text" />
+          <input v-model="create_voucher.so_tien_toi_da" class="form-control" type="text" />
           <label class="mt-2">Số vé tối thiểu</label>
-          <input class="form-control" type="text" />
+          <input v-model="create_voucher.ve_toi_thieu" class="form-control" type="text" />
           <label class="mt-2">Tình trạng</label>
-          <select class="form-select" aria-label="Default select example">
+          <select v-model="create_voucher.tinh_trang" class="form-select" aria-label="Default select example">
             <option selected>Chọn tình trạng</option>
             <option value="1">Hiển thị</option>
             <option value="0">Tạm tắt</option>
           </select>
           <div class="mt-3 d-flex justify-content-end">
-            <button type="button" class="btn btn-primary">Lưu</button>
+            <button type="button" class="btn btn-primary" @click="themVoucher">Lưu</button>
           </div>
         </div>
       </div>
@@ -59,20 +59,20 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td class="align-middle text-center">1</td>
-                  <td class="align-middle text-center">VOUCHER123</td>
-                  <td class="align-middle text-center">2023-10-01</td>
-                  <td class="align-middle text-center">2023-10-31</td>
-                  <td class="text-center align-middle">Giảm giá</td>
-                  <td class="text-center align-middle">20%</td>
-                  <td class="text-center align-middle">50.000đ</td>
-                  <td class="text-center align-middle">2 vé</td>
+                <tr v-for="(item, index) in list_voucher" :key="index">
+                  <td class="align-middle text-center">{{ index + 1 }}</td>
+                  <td class="align-middle text-center">{{ item.ma_code }}</td>
+                  <td class="align-middle text-center">{{ convertDate(item.thoi_gian_bat_dau)  }}</td>
+                  <td class="align-middle text-center">{{ convertDate(item.thoi_gian_ket_thuc) }}</td>
+                  <td :class="item.loai_giam == 1 ? 'text-success' : 'text-danger'">{{ item.loai_giam == 1 ? 'Giảm giá' : 'Giảm tiền' }}</td>
+                  <td class="text-center align-middle">{{ item.so_giam_gia }}</td>
+                  <td class="text-center align-middle">{{ item.so_tien_toi_da }}</td>
+                  <td class="text-center align-middle">{{ item.ve_toi_thieu }}</td>
                   <td class="text-center align-middle">
-                    <button type="button" class="btn btn-success btn-sm">
+                    <button v-if="item.tinh_trang == 1" type="button" class="btn btn-success btn-sm">
                       Hiển thị
                     </button>
-                    <button type="button" class="btn btn-warning btn-sm">
+                    <button v-else type="button" class="btn btn-warning btn-sm">
                       Tạm tắt
                     </button>
                   </td>
@@ -169,14 +169,14 @@ export default {
         return {
             list_voucher: [],
             create_voucher: {
-                ma_voucher: '',
-                thoi_gian_bat_dau: '',
-                thoi_gian_ket_thuc: '',
-                loai_giam: '',
-                so_giam_gia: '',
-                so_tien_toi_da: '',
-                so_ve_toi_thieu: '',
-                tinh_trang: 1
+              ma_code: '',  
+              thoi_gian_bat_dau: '',
+              thoi_gian_ket_thuc: '',
+              loai_giam: '',
+              so_giam_gia: '',
+              so_tien_toi_da: '',
+              ve_toi_thieu: '',
+              tinh_trang: 1
             }
         }
     },
@@ -200,6 +200,9 @@ export default {
                 alert('Thêm voucher thất bại');
               }
             });
+        },
+        convertDate(date) {
+            return new Date(date).toLocaleDateString('vi-VN');
         }
 
 
