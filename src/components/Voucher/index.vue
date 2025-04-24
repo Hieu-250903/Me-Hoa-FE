@@ -1,0 +1,210 @@
+<template>
+  <div class="row">
+    <div class="col-lg-3">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Thêm Voucher</h5>
+          <hr />
+          <label class="mt-2">Mã Voucher</label>
+          <input class="form-control" type="text" />
+          <label class="mt-2">Thời gian bắt đầu</label>
+          <input class="form-control" type="date" />
+          <label class="mt-2">Thời gian kết thúc</label>
+          <input class="form-control" type="date" />
+          <label class="mt-2">Loại giảm</label>
+          <select class="form-select" aria-label="Default select example">
+            <option selected>Chọn loại giảm</option>
+            <option value="1">Giảm giá</option>
+            <option value="0">Giảm tiền</option>
+          </select>
+          <label class="mt-2">Số giảm giá</label>
+          <input class="form-control" type="text" />
+          <label class="mt-2">Số tiền tối đa</label>
+          <input class="form-control" type="text" />
+          <label class="mt-2">Số vé tối thiểu</label>
+          <input class="form-control" type="text" />
+          <label class="mt-2">Tình trạng</label>
+          <select class="form-select" aria-label="Default select example">
+            <option selected>Chọn tình trạng</option>
+            <option value="1">Hiển thị</option>
+            <option value="0">Tạm tắt</option>
+          </select>
+          <div class="mt-3 d-flex justify-content-end">
+            <button type="button" class="btn btn-primary">Lưu</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-9">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Danh Sách Voucher</h5>
+          <hr />
+          <div class="table-responsive">
+            <table class="table table-bordered table-hover">
+              <thead>
+                <tr>
+                  <th class="align-middle text-center">#</th>
+                  <th class="align-middle text-center text-nowrap">
+                    Mã Voucher
+                  </th>
+                  <th class="align-middle text-center">Thời gian bắt đầu</th>
+                  <th class="align-middle text-center">Thời gian kết thúc</th>
+                  <th class="align-middle text-center">Loại giảm</th>
+                  <th class="align-middle text-center">Số giảm giá</th>
+                  <th class="align-middle text-center">Số tiền tối đa</th>
+                  <th class="align-middle text-center">Số vé tối thiểu</th>
+                  <th class="align-middle text-center">Tình trạng</th>
+                  <th class="align-middle text-center">Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="align-middle text-center">1</td>
+                  <td class="align-middle text-center">VOUCHER123</td>
+                  <td class="align-middle text-center">2023-10-01</td>
+                  <td class="align-middle text-center">2023-10-31</td>
+                  <td class="text-center align-middle">Giảm giá</td>
+                  <td class="text-center align-middle">20%</td>
+                  <td class="text-center align-middle">50.000đ</td>
+                  <td class="text-center align-middle">2 vé</td>
+                  <td class="text-center align-middle">
+                    <button type="button" class="btn btn-success btn-sm">
+                      Hiển thị
+                    </button>
+                    <button type="button" class="btn btn-warning btn-sm">
+                      Tạm tắt
+                    </button>
+                  </td>
+                  <td class="text-nowrap align-middle text-center">
+                    <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#capNhatModal">
+                      Cập Nhật
+                    </button>
+                    <button type="button" class="ms-2 btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#xoaModal">
+                      Xóa
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+<!-- Modal cap nhat -->
+<div class="modal fade" id="capNhatModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Cập nhật voucher</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <label class="mt-2">Mã Voucher</label>
+        <input class="form-control" type="text" />
+        <label class="mt-2">Thời gian bắt đầu</label>
+        <input class="form-control" type="date" />
+        <label class="mt-2">Thời gian kết thúc</label>
+        <input class="form-control" type="date" />
+        <label class="mt-2">Loại giảm</label>
+        <select class="form-select" aria-label="Default select example">
+          <option selected>Chọn loại giảm</option>
+          <option value="1">Giảm giá</option>
+          <option value="0">Giảm tiền</option>
+        </select>
+        <label class="mt-2">Số giảm giá</label>
+        <input class="form-control" type="text" />
+        <label class="mt-2">Số tiền tối đa</label>
+        <input class="form-control" type="text" />
+        <label class="mt-2">Số vé tối thiểu</label>
+        <input class="form-control" type="text" />
+        <label class="mt-2">Tình trạng</label>
+        <select class="form-select" aria-label="Default select example">
+          <option selected>Chọn tình trạng</option>
+          <option value="1">Hiển thị</option>
+          <option value="0">Tạm tắt</option>
+        </select>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+        <button type="button" class="btn btn-primary">Cập nhật</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal xóa -->
+<div class="modal fade" id="xoaModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Xóa voucher</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="alert alert-danger" role="alert">
+          <h6>
+            <b class="text-center text-danger">Bạn có chắc chắn muốn xóa voucher này không?</b>
+          </h6>
+          <br />
+          <br />
+          <i class="fa-solid fa-circle-xmark me-2"></i><b>Điều này sẽ không thể hoàn tác !!.</b>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+        <button type="button" class="btn btn-danger">Xóa</button>
+      </div>
+    </div>
+  </div>
+</div>
+</template>
+<script>
+import axios from 'axios';
+
+export default {
+    data() {
+        return {
+            list_voucher: [],
+            create_voucher: {
+                ma_voucher: '',
+                thoi_gian_bat_dau: '',
+                thoi_gian_ket_thuc: '',
+                loai_giam: '',
+                so_giam_gia: '',
+                so_tien_toi_da: '',
+                so_ve_toi_thieu: '',
+                tinh_trang: 1
+            }
+        }
+    },
+    mounted() {
+        this.getVoucher();
+    },
+    methods: {
+        getVoucher() {
+            axios.get('http://localhost:8000/api/admin/voucher/get-data')
+            .then((res) => {
+                this.list_voucher = res.data.data;
+            });
+        },
+        themVoucher() {
+            axios.post('http://localhost:8000/api/admin/voucher/add-data', this.create_voucher)
+            .then((res)  => {
+              if(res.data.status) {
+                alert('Thêm voucher thành công');
+                this.getVoucher();
+              } else {
+                alert('Thêm voucher thất bại');
+              }
+            });
+        }
+
+
+    }
+} 
+</script>
+<style>
+</style>
