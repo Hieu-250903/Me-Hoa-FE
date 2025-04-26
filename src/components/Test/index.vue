@@ -1,5 +1,7 @@
 <template>
-    Chào Mừng Bạn Đến Với DZFullStack
+    <div>
+        <h1>Chào Mừng Bạn Đến Với DZFullStack</h1>
+    </div>
 </template>
 <script>
 export default {

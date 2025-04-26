@@ -30,8 +30,8 @@
           <hr />
           <div class="table-responsive">
             <table class="table table-bordered table-hover">
-              <thead>
-                <tr>
+              <thead class="text-center align-middle">
+                <tr class="bg-primary text-light">
                   <th class="align-middle text-center">#</th>
                   <th class="align-middle text-center text-nowrap">
                     Tên dịch vụ
