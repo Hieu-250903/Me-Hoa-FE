@@ -6,20 +6,20 @@
           <h5>Dịch Vụ</h5>
           <hr />
           <label>Tên dịch vụ</label>
-          <input v-model="create_dich_vu.ten_dich_vu" class="form-control" type="text" />
+          <input class="form-control" type="text" />
           <label class="mt-2">Giá dịch vụ</label>
-          <input v-model="create_dich_vu.gia" class="form-control" type="text" />
+          <input class="form-control" type="text" />
           <label class="mt-2">Mô tả dịch vụ</label>
-          <textarea v-model="create_dich_vu.mo_ta" class="form-control" rows="3"></textarea>
+          <textarea class="form-control" rows="3"></textarea>
           <label class="mt-2">Tình trạng</label>
-          <select v-model="create_dich_vu.tinh_trang" class="form-select" aria-label="Default select example">
+          <select class="form-select" aria-label="Default select example">
             <option selected>Chọn tình trạng</option>
             <option value="1">Hiển thị</option>
             <option value="0">Tạm tắt</option>
           </select>
         </div>
         <div class="card-footer d-flex justify-content-end">
-          <button type="button" class="btn btn-primary" @click="themDichVu">Lưu</button>
+          <button type="button" class="btn btn-primary">Lưu</button>
         </div>
       </div>
     </div>
@@ -43,16 +43,16 @@
                 </tr>
               </thead>
               <tbody>
-                <tr v-for="(item, index) in list_dich_vu" :key="index">
-                  <td class="align-middle text-center">{{ index + 1 }}</td>
-                  <td class="align-middle">{{ item.ten_dich_vu }}</td>
-                  <td class="align-middle ">{{ item.gia }}</td>
-                  <td class="align-middle ">{{ item.mo_ta }}</td>
+                <tr>
+                  <td class="align-middle text-center">1</td>
+                  <td class="align-middle text-center">Bắp rang bơ</td>
+                  <td class="align-middle text-center">20.000đ</td>
+                  <td class="align-middle text-center">Bắp rang bơ ngọt</td>
                   <td class="text-center align-middle">
-                    <button v-if="item.tinh_trang == 1" class="btn btn-success" type="button">
+                    <button class="btn btn-success" type="button">
                       <i class="fa-solid fa-square-check"></i> Hiển thị
                     </button>
-                    <button v-else class="btn btn-warning" type="button">
+                    <button class="btn btn-warning" type="button">
                       <i class="fa-solid fa-square-xmark"></i> Tạm tắt
                     </button>
                   </td>
@@ -131,42 +131,7 @@
 </div>
 </template>
 <script>
-import axios from 'axios';  
-export default {
-  data() {
-    return {
-      list_dich_vu: [],
-      create_dich_vu: {
-        ten_dich_vu: '',
-        gia: '',  
-        mo_ta: '',
-        tinh_trang: 1
-      },
-    };
-  },
-  mounted() {
-    this.getListDichVu();
-  },
-  methods: {
-    getListDichVu() {
-      axios.get('http://localhost:8000/api/admin/dich-vu/get-data')
-      .then((res) => {
-        this.list_dich_vu = res.data.data;
-      });
-    },
-    themDichVu() {
-      axios.post('http://localhost:8000/api/admin/dich-vu/add-data', this.create_dich_vu)
-      .then((res) => {
-        if (res.data.status) {
-          alert('Thêm dịch vụ thành công');
-          this.getListDichVu();
-        } else {
-          alert('Thêm dịch vụ thất bại');
-        }
-      });
-    },
-  },
-};
+export default {};
 </script>
 <style >
 </style>
