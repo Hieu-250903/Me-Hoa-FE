@@ -12,102 +12,61 @@
 		</div>
 		<nav class="navbar navbar-expand-xl w-100">
 			<ul class="navbar-nav justify-content-start flex-grow-1 gap-1">
-				<router-link to="/admin">
+				<router-link to="/">
 					<li class="nav-item">
-						<a class="nav-link" href="/admin">
-							<div class="parent-icon">
-								<i class="bx bx-home-circle"></i>
-
-							</div>
-							<div class="menu-title">Dashboard</div>
-						</a>
-					</li>
+					<a class="nav-link" href="/">
+						<div class="parent-icon">
+							<i class="bx bx-home-circle"></i>
+					
+						</div>
+						<div class="menu-title">Trang Chủ</div>
+					</a>
+				</li>
 				</router-link>
-				<router-link to="/admin/phim">
-					<li class="nav-item">
-						<a class="nav-link" href="/admin/phim">
-							<div class="parent-icon">
-								<i class="fa-solid fa-film"></i>
-
-							</div>
-							<div class="menu-title">Phim</div>
-						</a>
-					</li>
-				</router-link>
-				<router-link to="/admin/the-loai-phim">
-					<li class="nav-item">
-						<a class="nav-link" href="/admin/the-loai-phim">
-							<div class="parent-icon">
-								<i class="bx bx-category"></i>
-
-							</div>
-							<div class="menu-title">Thể Loại Phim</div>
-						</a>
-					</li>
-				</router-link>
-				<router-link to="/admin/phong-chieu">
-					<li class="nav-item">
-						<a class="nav-link" href="/admin/phong-chieu">
-							<div class="parent-icon">
-								<i class="fa-solid fa-person-shelter"></i>
-
-							</div>
-							<div class="menu-title">Phòng Chiếu</div>
-						</a>
-					</li>
-				</router-link>
-				<router-link to="/admin/dich-vu">
-					<li class="nav-item">
-						<a class="nav-link" href="/admin/dich-vu">
-							<div class="parent-icon">
-								<i class="fa-brands fa-servicestack"></i>
-
-							</div>
-							<div class="menu-title">Dịch Vụ</div>
-						</a>
-					</li>
-				</router-link>
-				<router-link to="/admin/voucher">
-					<li class="nav-item">
-						<a class="nav-link" href="/admin/	voucher">
-							<div class="parent-icon">
-								<i class="fa-solid fa-ticket"></i>
-
-							</div>
-							<div class="menu-title">Voucher</div>
-						</a>
-					</li>
-				</router-link>
-				<router-link to="/admin/nhan-vien">
-					<li class="nav-item">
-						<a class="nav-link" href="/admin/nhan-vien">
-							<div class="parent-icon">
-								<i class="fa-solid fa-user"></i>
-							</div>
-							<div class="menu-title">Nhân Viên</div>
-						</a>
-					</li>
-				</router-link>
-				<router-link to="/admin/khach-hang">
-					<li class="nav-item">
-						<a class="nav-link" href="/admin/khach-hang">
-							<div class="parent-icon">
-								<i class="fa-solid fa-user-group"></i>
-							</div>
-							<div class="menu-title">Khách Hàng</div>
-						</a>
-					</li>
-				</router-link>
-				<router-link to="/admin/phan-quyen">
-					<li class="nav-item">
-						<a class="nav-link" href="/admin/phan-quyen">
-							<div class="parent-icon">
-								<i class="fa-solid fa-user-shield"></i>
-							</div>
-							<div class="menu-title">Phân Quyền</div>
-						</a>
-					</li>
-				</router-link>
+				<router-link to="/the-loai-phim">
+				<li class="nav-item">
+					<a class="nav-link" href="/the-loai-phim">
+						<div class="parent-icon">
+							<i class="bx bx-category"></i>
+					
+						</div>
+						<div class="menu-title">Thể Loại Phim</div>
+					</a>
+				</li>
+			</router-link>
+			<router-link to="/phong-chieu">
+				<li class="nav-item">
+					<a class="nav-link" href="/phong-chieu">
+						<div class="parent-icon">
+							<i class="fa-solid fa-person-shelter"></i>
+					
+						</div>
+						<div class="menu-title">Phòng Chiếu</div>
+					</a>
+				</li>
+			</router-link>
+			<router-link to="/dich-vu">
+				<li class="nav-item">
+					<a class="nav-link" href="/dich-vu">
+						<div class="parent-icon">
+							<i class="fa-brands fa-servicestack"></i>
+					
+						</div>
+						<div class="menu-title">Dịch Vụ</div>
+					</a>
+				</li>
+			</router-link>
+			<router-link to="/voucher">
+				<li class="nav-item">
+					<a class="nav-link" href="/voucher">
+						<div class="parent-icon">
+							<i class="fa-solid fa-ticket"></i>
+					
+						</div>
+						<div class="menu-title">Voucher</div>
+					</a>
+				</li>
+			</router-link>
 			</ul>
 		</nav>
 	</div>
