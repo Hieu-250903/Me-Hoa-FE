@@ -108,36 +108,6 @@
 						</a>
 					</li>
 				</router-link>
-				<router-link to="/admin/ve">
-					<li class="nav-item">
-						<a class="nav-link" href="/admin/ve">
-							<div class="parent-icon">
-								<i class="fa-solid fa-ticket"></i>
-							</div>
-							<div class="menu-title">Vé</div>
-						</a>
-					</li>
-				</router-link>
-				<router-link to="/admin/suat-chieu">
-					<li class="nav-item">
-						<a class="nav-link" href="/admin/suat-chieu">
-							<div class="parent-icon">
-								<i class="fa-solid fa-calendar-days"></i>
-							</div>
-							<div class="menu-title">Suất Chiếu</div>
-						</a>
-					</li>
-					</router-link>
-				<router-link to="/admin/ghe">
-					<li class="nav-item">
-						<a class="nav-link" href="/admin/ghe">
-							<div class="parent-icon">
-								<i class="fa-solid fa-chair"></i>
-							</div>
-							<div class="menu-title">Ghế</div>
-						</a>
-					</li>
-				</router-link>
 			</ul>
 		</nav>
 	</div>

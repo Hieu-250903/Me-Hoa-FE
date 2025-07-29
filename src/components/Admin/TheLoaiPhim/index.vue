@@ -1,7 +1,7 @@
 <template>
     <div class="row">
       <div class="col-lg-4">
-        <div class="card radius-10 border-top border-0 border-3 border-info">
+        <div class="card">
           <div class="card-body">
             <h5 class="card-title">Thêm Thể Loại Phim</h5>
             <hr>
@@ -23,7 +23,7 @@
         </div>
       </div>
       <div class="col-lg-8">
-        <div class="card radius-10 border-top border-0 border-3 border-info">
+        <div class="card">
             <div class="card-body">
             <h5 class="card-title">Danh Sách Thể Loại Phim</h5>
             <hr>

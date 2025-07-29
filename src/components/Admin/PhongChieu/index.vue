@@ -1,7 +1,7 @@
 <template>
     <div class="row">
         <div class="col-lg-12">
-            <div class="card radius-10 border-top border-0 border-3 border-info">
+            <div class="card">
                 <div class="card-body">
                     <span class="d-flex justify-content-between">
                         <h5 class="card-title mt-2">Danh Sách Phòng Chiếu</h5>

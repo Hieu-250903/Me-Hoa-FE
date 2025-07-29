@@ -41,18 +41,6 @@ const routes = [
       path: '/admin/phim',
       component: () => import('../components/Admin/Phim/index.vue')
     },
-    {
-      path: '/admin/ve',
-      component: () => import('../components/Admin/Ve/index.vue')
-    },
-    {
-      path: '/admin/suat-chieu',
-      component: () => import('../components/Admin/SuatChieu/index.vue')
-    },
-    {
-      path: '/admin/ghe',
-      component: () => import('../components/Admin/Ghe/index.vue')
-    }
    
 ]
 

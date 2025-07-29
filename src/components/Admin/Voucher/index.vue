@@ -1,7 +1,7 @@
 <template>
   <div class="row">
     <div class="col-lg-3">
-      <div class="card radius-10 border-top border-0 border-3 border-info">
+      <div class="card">
         <div class="card-body">
           <h5 class="card-title">Thêm Voucher</h5>
           <hr />
@@ -36,7 +36,7 @@
       </div>
     </div>
     <div class="col-lg-9">
-      <div class="card radius-10 border-top border-0 border-3 border-info">
+      <div class="card">
         <div class="card-body">
           <h5 class="card-title">Danh Sách Voucher</h5>
           <hr />
