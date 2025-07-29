@@ -42,39 +42,48 @@
 
     <div class="container my-4">
         <!--Xe có sẵn -->
-        
-            <h3 class="text-center mb-4">XE CÓ NGAY</h3>
-            <div class="row">
-                <template v-for="(value, index) in list_xe " :key="index">
-                    <div class="col-md-3 mb-3">
-                        <div class="card">
-                            <img src="https://www.bonboncar.vn/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Fbonboncar-cms%2Fsmall_z5931051391049_829b1535afd2b8a3c195f5e3324381b6_copy_9cfcd23dea%2Fsmall_z5931051391049_829b1535afd2b8a3c195f5e3324381b6_copy_9cfcd23dea.jpg&w=768&q=80"
-                                alt="" >
-                            <div class="card-body">
-                                <b>
-                                    <h5>{{ value.ten_xe }}</h5>
-                                </b>
+
+        <h3 class="text-center mb-4">THUÊ XE TỰ LÁI</h3>
+        <div class="row">
+            <template v-for="(value, index) in list_xe " :key="index">
+                <div class="col-md-3 mb-3">
+                    <div class="card">
+                        <img src="https://www.bonboncar.vn/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Fbonboncar-cms%2Fsmall_z5931051391049_829b1535afd2b8a3c195f5e3324381b6_copy_9cfcd23dea%2Fsmall_z5931051391049_829b1535afd2b8a3c195f5e3324381b6_copy_9cfcd23dea.jpg&w=768&q=80"
+                            alt="">
+                        <div class="card-body">
+                            <b>
+                                <h5>{{ value.ten_xe }}</h5>
+                            </b>
+                            <div class="d-flex justify-content-between">
                                 <p>{{ value.vi_tri_thue_xe }}</p>
-                                <p><b class="text-success">{{ value.gia_thue }}</b>/giờ</p>
-                                <div class="d-flex justify-content-between">
-                                    <span class="badge bg-info text-dark">{{ value.so_cho }}</span>
-                                    <span class="badge bg-danger">{{ value.loai_xe }}</span>
 
-                                </div>
                             </div>
+                            <div class="d-flex justify-content-between">
+                                <span class="badge bg-info text-dark">{{ value.so_cho }}</span>
+                                <span class="badge bg-info text-dark">Số tự động</span>
+                                <span class="badge bg-info text-dark">{{ value.loai_xe }}</span>
 
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <p style="font-size:15px"><b class="text-success align-items-center">{{ value.gia_thue
+                                }}</b>/ngày</p>
+                                <button class="btn btn-dark text-light">Thuê Ngay</button>
+                            </div>
                         </div>
+
                     </div>
-                </template>
-            </div>
-            <div class="text-center mb-4">
-                <router-link to="/xe/xe-co-ngay">
-                    <button class="btn btn-outline-danger rounded-pill">Xem thêm xe có sẵn</button>
-                </router-link>
-            </div>
-       
+                </div>
+            </template>
+        </div>
+        <div class="text-center mb-4">
+            <router-link to="/thue-xe-tu-lai">
+                <button class="btn btn-outline-danger rounded-pill">Xem thêm xe</button>
+            </router-link>
+        </div>
+
 
         <!-- CHỌN XE THEO HÃNG -->
+        <h3 class="text-center mb-4">CHỌN XE TỰ LÁI THEO HÃNG</h3>
         <div class="hang-slider-wrapper overflow-hidden mb-5">
             <div ref="hangSlider" class="hang-slider d-flex">
                 <div v-for="hang in list_hang" :key="hang.ten_hang" class="hang-item text-center mx-2">
@@ -93,39 +102,63 @@
                 <i class="fa-solid fa-angle-right"></i>
             </button>
         </div>
+        <h3 class="text-center mb-4">ĐẶT TOUR DU LỊCH</h3>
+        <div class="row">
+            
+                <template v-for="(tour, index) in list_tour" :key="index">
+                    <div class="col-lg-4">
+                    <div class="card mb-4 p-3 shadow" style="border-radius: 8px;">
+                        <!-- Ảnh tour -->
+                        <div class="p-0">
+                            <img :src="tour.hinh_anh" alt="Ảnh tour" class="img-fluid rounded-start"
+                                style="height: 300px; object-fit: cover;" />
+                        </div>
 
-<!--Xe đc yêu thích -->
-        
-<h3 class="text-center mb-4">XE ĐƯỢC YÊU THÍCH</h3>
-            <div class="row">
-                <template v-for="(value, index) in list_xe " :key="index">
-                    <div class="col-md-3 mb-3">
-                        <div class="card">
-                            <img src="https://www.bonboncar.vn/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Fbonboncar-cms%2Fsmall_z5931051391049_829b1535afd2b8a3c195f5e3324381b6_copy_9cfcd23dea%2Fsmall_z5931051391049_829b1535afd2b8a3c195f5e3324381b6_copy_9cfcd23dea.jpg&w=768&q=80"
-                                alt="" >
-                            <div class="card-body">
-                                <b>
-                                    <h5>{{ value.ten_xe }}</h5>
-                                </b>
-                                <p>{{ value.vi_tri_thue_xe }}</p>
-                                <p><b class="text-success">{{ value.gia_thue }}</b>/giờ</p>
-                                <div class="d-flex justify-content-between">
-                                    <span class="badge bg-info text-dark">{{ value.so_cho }}</span>
-                                    <span class="badge bg-danger">{{ value.loai_xe }}</span>
+                        <!-- Nội dung tour -->
+                        <div class="ps-4 d-flex flex-column justify-content-between mt-2">
+                            <div>
+                                <h5 class="fw-bold text-dark mb-2">
+                                    {{ tour.tieu_de }}
+                                </h5>
+
+                                <div class="row">
+                                    <div class="col-lg-6 mb-2 text-muted">
+                                        <p><strong>Mã tour:</strong> {{ tour.ma_tour }}</p>
+                                        <p><strong>Khởi hành:</strong> {{ tour.khoi_hanh }}</p>
+                                    </div>
+                                    <div class="col-lg-6 mb-2 text-muted">
+                                        <p><strong>Thời gian:</strong> {{ tour.thoi_gian }}</p>
+                                        <p><strong>Phương tiện:</strong> {{ tour.phuong_tien }}</p>
+                                    </div>
 
                                 </div>
+                                <!-- Ngày khởi hành -->
+                                <div class="d-flex gap-2 flex-wrap mb-3">
+                                    <span v-for="(ngay, i) in tour.ngay_khoi_hanh.slice(0, 5)" :key="i"
+                                        class="border px-3 py-1 rounded text-danger border-danger">
+                                        {{ ngay }}
+                                    </span>
+                                </div>
                             </div>
-
+                            <div class="d-flex justify-content-between">
+                                <p class="text-danger fs-4 fw-bold mb-2">
+                                    Giá từ: {{ tour.gia }}
+                                </p>
+                                <div>
+                                    <button class="btn btn-primary">Xem chi tiết</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
+                </div>
                 </template>
-            </div>
-            <div class="text-center mb-4">
-                <router-link to="/xe/xe-co-ngay">
-                    <button class="btn btn-outline-danger rounded-pill">Xem thêm xe được yêu thích</button>
-                </router-link>
-            </div>
-       
+           
+        </div>
+        <div class="text-center mb-4">
+            <router-link to="/dat-tour-du-lich">
+                <button class="btn btn-outline-danger rounded-pill">Xem toàn bộ tour du lịch</button>
+            </router-link>
+        </div>
 
 
 
@@ -257,25 +290,57 @@ export default {
             list_phim: [],
             list_bv: [],
             list_hang: [
-                { logo:"https://pngdownload.io/wp-content/uploads/2023/12/BMW-Logo-emblem-of-Bayerische-Motoren-Werke-AG-transparent-png-jpg.webp", ten_hang: "Toyota" },
-                { logo:"https://pngdownload.io/wp-content/uploads/2023/12/BMW-Logo-emblem-of-Bayerische-Motoren-Werke-AG-transparent-png-jpg.webp", ten_hang: "Hyundai" },
-                { logo:"https://pngdownload.io/wp-content/uploads/2023/12/BMW-Logo-emblem-of-Bayerische-Motoren-Werke-AG-transparent-png-jpg.webp", ten_hang: "Kia" },
-                { logo:"https://pngdownload.io/wp-content/uploads/2023/12/BMW-Logo-emblem-of-Bayerische-Motoren-Werke-AG-transparent-png-jpg.webp", ten_hang: "Mazda" },
-                { logo:"https://pngdownload.io/wp-content/uploads/2023/12/BMW-Logo-emblem-of-Bayerische-Motoren-Werke-AG-transparent-png-jpg.webp", ten_hang: "Honda" },
-                { logo:"https://pngdownload.io/wp-content/uploads/2023/12/BMW-Logo-emblem-of-Bayerische-Motoren-Werke-AG-transparent-png-jpg.webp", ten_hang: "VinFast" },
-                { logo:"https://pngdownload.io/wp-content/uploads/2023/12/BMW-Logo-emblem-of-Bayerische-Motoren-Werke-AG-transparent-png-jpg.webp", ten_hang: "Mercedes-Benz" },
-                { logo:"https://pngdownload.io/wp-content/uploads/2023/12/BMW-Logo-emblem-of-Bayerische-Motoren-Werke-AG-transparent-png-jpg.webp", ten_hang: "BMW" },
-                { logo:"https://pngdownload.io/wp-content/uploads/2023/12/BMW-Logo-emblem-of-Bayerische-Motoren-Werke-AG-transparent-png-jpg.webp", ten_hang: "Mitsubishi" },
-                { logo:"https://pngdownload.io/wp-content/uploads/2023/12/BMW-Logo-emblem-of-Bayerische-Motoren-Werke-AG-transparent-png-jpg.webp", ten_hang: "Ford" }
+                { logo: "https://pngdownload.io/wp-content/uploads/2023/12/BMW-Logo-emblem-of-Bayerische-Motoren-Werke-AG-transparent-png-jpg.webp", ten_hang: "Toyota" },
+                { logo: "https://pngdownload.io/wp-content/uploads/2023/12/BMW-Logo-emblem-of-Bayerische-Motoren-Werke-AG-transparent-png-jpg.webp", ten_hang: "Hyundai" },
+                { logo: "https://pngdownload.io/wp-content/uploads/2023/12/BMW-Logo-emblem-of-Bayerische-Motoren-Werke-AG-transparent-png-jpg.webp", ten_hang: "Kia" },
+                { logo: "https://pngdownload.io/wp-content/uploads/2023/12/BMW-Logo-emblem-of-Bayerische-Motoren-Werke-AG-transparent-png-jpg.webp", ten_hang: "Mazda" },
+                { logo: "https://pngdownload.io/wp-content/uploads/2023/12/BMW-Logo-emblem-of-Bayerische-Motoren-Werke-AG-transparent-png-jpg.webp", ten_hang: "Honda" },
+                { logo: "https://pngdownload.io/wp-content/uploads/2023/12/BMW-Logo-emblem-of-Bayerische-Motoren-Werke-AG-transparent-png-jpg.webp", ten_hang: "VinFast" },
+                { logo: "https://pngdownload.io/wp-content/uploads/2023/12/BMW-Logo-emblem-of-Bayerische-Motoren-Werke-AG-transparent-png-jpg.webp", ten_hang: "Mercedes-Benz" },
+                { logo: "https://pngdownload.io/wp-content/uploads/2023/12/BMW-Logo-emblem-of-Bayerische-Motoren-Werke-AG-transparent-png-jpg.webp", ten_hang: "BMW" },
+                { logo: "https://pngdownload.io/wp-content/uploads/2023/12/BMW-Logo-emblem-of-Bayerische-Motoren-Werke-AG-transparent-png-jpg.webp", ten_hang: "Mitsubishi" },
+                { logo: "https://pngdownload.io/wp-content/uploads/2023/12/BMW-Logo-emblem-of-Bayerische-Motoren-Werke-AG-transparent-png-jpg.webp", ten_hang: "Ford" }
             ],
-
+            list_tour: [
+                {
+                    tieu_de: "Hoa Sơn",
+                    ma_tour: "NNHAN288",
+                    khoi_hanh: "Đà Nẵng",
+                    thoi_gian: "8N7Đ",
+                    phuong_tien: "Xe Oto",
+                    ngay_khoi_hanh: ["31/07", "07/08", "14/08", "21/08", "28/08"],
+                    gia: "19.900.000 ₫",
+                    hinh_anh: "https://i1-dulich.vnecdn.net/2018/10/31/Hoa-Son1-1540983301.jpg?w=1200&h=0&q=100&dpr=2&fit=crop&s=xNRtGdRWj2pxQkQaKOuU7g"
+                },
+                {
+                    tieu_de: "Vạn Lý Trường Thành",
+                    ma_tour: "NNHAN288",
+                    khoi_hanh: "Đà Nẵng",
+                    thoi_gian: "8N7Đ",
+                    phuong_tien: "Xe Oto",
+                    ngay_khoi_hanh: ["31/07", "07/08", "14/08", "21/08", "28/08"],
+                    gia: "19.900.000 ₫",
+                    hinh_anh: "https://cdn.tgdd.vn/Files/2021/06/23/1362595/du-lich-trung-quoc-dung-bo-qua-10-dia-diem-noi-tieng-hap-dan-nhat-nay-202201030832031917.jpg"
+                },
+                {
+                    tieu_de: "Đỉnh Quang Minh",
+                    ma_tour: "NNHAN288",
+                    khoi_hanh: "Đà Nẵng",
+                    thoi_gian: "8N7Đ",
+                    phuong_tien: "Xe Oto",
+                    ngay_khoi_hanh: ["31/07", "07/08", "14/08", "21/08", "28/08"],
+                    gia: "19.900.000 ₫",
+                    hinh_anh: "https://i1-dulich.vnecdn.net/2018/10/31/Dinh-Quang-Minh1-1540983981.jpg?w=1200&h=0&q=100&dpr=2&fit=crop&s=bgvdx6MSUHZEXVxfAxUMZg"
+                },
+            ],
             list_xe: [
                 {
                     ten_xe: 'Lamborghini Huracán',
                     vi_tri_thue_xe: 'Quận 1, TP.HCM',
                     gia_thue: '3.000.000đ',
                     so_cho: '2 chỗ',
-                    loai_xe: 'Xe xăng'
+                    loai_xe: 'Xe xăng',
+                    tinh_trang: '1'
                 },
                 {
                     ten_xe: 'Ferrari 488 GTB',
@@ -297,7 +362,8 @@ export default {
                     gia_thue: '1.200.000đ',
                     so_cho: '5 chỗ',
                     loai_xe: 'Xe điện'
-                }
+                },
+
             ]
         }
     },

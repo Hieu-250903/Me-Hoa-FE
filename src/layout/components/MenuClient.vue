@@ -15,7 +15,7 @@
                                     Chủ</a>
                             </li>
                         </router-link>
-                        <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle text-light fs-6" href="#" role="button"
+                        <!-- <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle text-light fs-6" href="#" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
                                 Xe
                             </a>
@@ -30,7 +30,15 @@
                                 </router-link>
                                 
                             </ul>
-                        </li>
+                        </li> -->
+                        <router-link to="/thue-xe-tu-lai">
+                            <li class="nav-item"> <a class="nav-link text-light fs-6" href="/thue-xe-tu-lai">Thuê xe tự lái</a>
+                            </li>
+                        </router-link>
+                        <router-link to="/dat-tour-du-lich">
+                            <li class="nav-item"> <a class="nav-link text-light fs-6" href="/dat-tour-du-lich">Đặt tour du lịch</a>
+                            </li>
+                        </router-link>
                         <router-link to="/bai-viet">
                             <li class="nav-item"> <a class="nav-link text-light fs-6" href="/bai-viet">Dịch Vụ</a>
                             </li>

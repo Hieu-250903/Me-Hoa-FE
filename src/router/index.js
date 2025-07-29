@@ -8,6 +8,16 @@ const routes = [
         meta: { layout: "client" },
     },
     {
+        path: "/dat-tour-du-lich",
+        component: () => import("../components/Client/BookTour/index.vue"),
+        meta: { layout: "client" },
+    },
+    {
+        path: "/thue-xe-tu-lai",
+        component: () => import("../components/Client/CarRent/index.vue"),
+        meta: { layout: "client" },
+    },
+    {
         path: "/client/quen-mat-khau",
         component: () => import("../components/Client/Auth/ForgotPassword/index.vue"),
         meta: { layout: "blank" },
