@@ -39,12 +39,8 @@
                             <li class="nav-item"> <a class="nav-link text-light fs-6" href="/dat-tour-du-lich">Đặt tour du lịch</a>
                             </li>
                         </router-link>
-                        <router-link to="/bai-viet">
-                            <li class="nav-item"> <a class="nav-link text-light fs-6" href="/bai-viet">Dịch Vụ</a>
-                            </li>
-                        </router-link>
-                        <router-link to="/about">
-                            <li class="nav-item"> <a class="nav-link text-light fs-6" href="/about">Liên Hệ</a>
+                        <router-link to="/lien-he">
+                            <li class="nav-item"> <a class="nav-link text-light fs-6" href="/lien-he">Liên Hệ</a>
                             </li>
                         </router-link>
                     </ul>

@@ -2,9 +2,10 @@
     <div class="container my-4">
         <!--Xe có sẵn -->
         <div class="card ">
-            <div class="card-body text-center">
-                <h2>ĐẶT TOUR DU LỊCH ĐÀ NẴNG</h2>
-                <p>AN NGU SI ÓC CHÓ</p>
+            <div class="card-body ">
+                <h2 class="text-center mt-2 mb-3">ĐẶT TOUR DU LỊCH ĐÀ NẴNG</h2>
+                <p style="font-size : 18px">Đà Nẵng nằm giữa ba di sản thế giới: cố đô Huế, phố cổ Hội An và thánh địa Mỹ Sơn. Đà Nẵng còn có nhiều danh thắng tuyệt đẹp say lòng du khách như Ngũ Hành Sơn, Bà Nà, bán đảo Sơn Trà, đèo Hải Vân, sông Hàn thơ mộng và cầu quay Sông Hàn – niềm tự hào của thành phố, và biển Mỹ Khê đẹp nhất hành tinh.
+Đăng ký tour Đà Nẵng cùng Vietravel, Quý khách có thể đến khám phá các điểm đến nổi bật sau: Bà Nà Hills, Cầu Quay Sông Hàn, Ngũ Hành Sơn, Bãi biển Non Nước, Đà Nẵng, Cù Lao Chàm,... Để hiểu hơn về Đà Nẵng, mời Quý khách tham khảo Kinh nghiệm du lịch Đà Nẵng.</p>
             </div>
         </div>
         <div class="row">
@@ -12,13 +13,30 @@
                 <h2>BỘ LỌC TÌM KIẾM</h2>
                 <div class="card">
                     <div class="card-body">
-                        <h4><b>Ngân Sách</b></h4>
+                        <h5><b>Ngân Sách</b></h5>
                         <div class="row">
-                            <btn class="btn btn-secondary  col-lg-6">Dưới 2 triệu</btn>
-                            <btn class="btn btn-secondary col-lg-6">Từ 2-5 triệu</btn>
-                            <btn class="btn btn-secondary col-lg-6">Từ 5-10 triệu</btn>
-                            <btn class="btn btn-secondary col-lg-6">Từ 10-15 triệu</btn>
+                            <template v-for="(value, index) in list_ngan_sach " :key="index">
+                            <div class="col-lg-6 mt-2">
+                                <btn @click="value_ngan_sach = 1" class="btn btn-outline-danger" style="width:180px">{{ value.ngan_sach }}</btn>
+                            </div>
+                        </template>
                         </div>
+                        <h5 class="mt-4"><b>Khởi Hành</b></h5>
+                        <select name="" id="" class="form-control mt-2">
+                            <option value="">Chọn địa điểm khởi hành</option>
+                            <option value="0">Đà Nẵng</option>
+                            <option value="1">Huế</option>
+                        </select>
+                        <h5 class="mt-4"><b>Ngày đi</b></h5>
+                        <input type="date" class="form-control mt-2" />
+                        <h5 class="mt-4"><b>Thời gian</b></h5>
+                        <select name="" id="" class="form-control mt-2">
+                            <option value="">Chọn thời gian</option>
+                            <option value="0">Dưới 3 ngày</option>
+                            <option value="0">Từ 3-5 ngày</option>
+                            <option value="0">Từ 5-7 ngày</option>
+                        </select>
+                        <button class="btn btn-primary text-center w-100 mt-3">Áp dụng</button>
                     </div>
                 </div>
             </div>
@@ -80,6 +98,20 @@ import axios from 'axios'
 export default {
     data() {
         return {
+            list_ngan_sach:[
+            {
+                ngan_sach: "Dưới 2 triệu"
+            },
+            {
+                ngan_sach: "Từ 2-5 triệu"
+            },
+            {
+                ngan_sach: "Từ 5-10 triệu"
+            },
+            {
+                ngan_sach: "Từ 10 triệu trở lên"
+            },
+            ],
             list_tour: [
                 {
                     tieu_de: "Hoa Sơn",

@@ -64,10 +64,13 @@
                                 <span class="badge bg-info text-dark">{{ value.loai_xe }}</span>
 
                             </div>
-                            <div class="d-flex justify-content-between align-items-center mt-3">
-                                <p style="font-size:15px"><b class="text-success align-items-center">{{ value.gia_thue
+                            <div class="d-flex justify-content-between mt-3">
+                                <p style="font-size:20px"><b class="text-success align-items-center">{{ value.gia_thue
                                 }}</b>/ngày</p>
-                                <button class="btn btn-dark text-light">Thuê Ngay</button>
+                                <div>
+                                    <button class="btn btn-dark text-light">Thuê Ngay</button>
+                                </div>
+
                             </div>
                         </div>
 
@@ -104,9 +107,9 @@
         </div>
         <h3 class="text-center mb-4">ĐẶT TOUR DU LỊCH</h3>
         <div class="row">
-            
-                <template v-for="(tour, index) in list_tour" :key="index">
-                    <div class="col-lg-4">
+
+            <template v-for="(tour, index) in list_tour" :key="index">
+                <div class="col-lg-4">
                     <div class="card mb-4 p-3 shadow" style="border-radius: 8px;">
                         <!-- Ảnh tour -->
                         <div class="p-0">
@@ -151,8 +154,8 @@
                         </div>
                     </div>
                 </div>
-                </template>
-           
+            </template>
+
         </div>
         <div class="text-center mb-4">
             <router-link to="/dat-tour-du-lich">
@@ -164,46 +167,46 @@
 
         <!-- Về chúng tôi -->
         <!-- Về chúng tôi -->
+        <!-- Về chúng tôi -->
         <div class="card p-5 border-0 shadow-sm rounded-4" style="background-color: #000000;">
-            <h3 class="text-center text-uppercase fw-bold mb-5 text-light">Thuê xe tự lái Đà Nẵng 2025</h3>
+            <h3 class="text-center text-uppercase fw-bold mb-5 text-light">Dịch vụ du lịch & thuê xe tự lái <span class="text-danger">ME</span>HOA</h3>
             <div class="row align-items-center">
                 <!-- Nội dung bên trái -->
                 <div class="col-md-7">
                     <h4 class="fw-bold mb-3">
-                        <span class="text-danger">Linh hoạt, tiết kiệm </span>
-                        <span class="text-primary">và thoải mái </span>
-                        <span class="text-light">trên mọi hành trình</span>
+                        <span class="text-danger">Du lịch tiện lợi</span>
+                        <span class="text-primary">– di chuyển chủ động</span>
+                        <span class="text-light">– khám phá thoải mái</span>
                     </h4>
                     <p class="text-light fs-5 mb-4">
-                        Tận hưởng chuyến đi của bạn theo cách riêng.
+                        MEHOA là đơn vị hàng đầu tại Đà Nẵng chuyên cung cấp <strong>tour du lịch trọn gói</strong> và
+                        <strong>dịch vụ thuê xe ô tô tự lái</strong>,
+                        đáp ứng nhu cầu di chuyển và khám phá linh hoạt của mọi khách hàng.
                     </p>
                     <ul class="list-unstyled fs-5">
                         <li class="mb-3 d-flex align-items-start">
                             <i class="fa fa-check-circle text-success me-2 mt-1"></i>
-                            <span class="text-light">Tự do khám phá không giới hạn địa điểm</span>
+                            <span class="text-light">Đa dạng tour khám phá Đà Nẵng, Hội An, Bà Nà Hills, Huế...</span>
                         </li>
                         <li class="mb-3 d-flex align-items-start">
                             <i class="fa fa-check-circle text-success me-2 mt-1"></i>
-                            <span class="text-light">Giá thuê tiết kiệm hơn 40% so với taxi</span>
+                            <span class="text-light">Cho thuê xe tự lái 4–7 chỗ đời mới, bảo hiểm đầy đủ</span>
                         </li>
                         <li class="mb-3 d-flex align-items-start">
                             <i class="fa fa-check-circle text-success me-2 mt-1"></i>
-                            <span class="text-light">Linh hoạt thuê theo giờ, ngày hoặc tuần</span>
+                            <span class="text-light">Giá thuê xe tiết kiệm – đặt xe nhanh – thủ tục đơn giản</span>
                         </li>
                         <li class="mb-3 d-flex align-items-start">
                             <i class="fa fa-check-circle text-success me-2 mt-1"></i>
-                            <span class="text-light">Phù hợp du lịch, công tác, hoặc sự kiện cá nhân</span>
+                            <span class="text-light">Hỗ trợ khách du lịch, gia đình, công tác và sự kiện</span>
                         </li>
                     </ul>
                 </div>
-                <!-- (Bạn có thể để phần hình ảnh bên phải hoặc bỏ nếu không dùng) -->
-
-
 
                 <!-- Ảnh bên phải -->
                 <div class="col-md-5 text-center">
                     <img src="https://media.baamboozle.com/uploads/images/55836/1682378705_349492_import-url.png"
-                        alt="Mua vé online" class="img-fluid rounded-3 shadow-sm">
+                        alt="Dịch vụ MEHOA" class="img-fluid rounded-3 shadow-sm">
                 </div>
             </div>
         </div>
@@ -212,8 +215,10 @@
 
 
 
-        <h3 class="text-center mb-4 fw-bold">Khách Hàng Nói Gì Về MEHOA?</h3>
+
+        <h3 class="text-center mb-4 fw-bold">Khách hàng nói gì về MEHOA?</h3>
         <div class="row justify-content-center">
+            <!-- Feedback 1 -->
             <div class="col-md-4 mb-3">
                 <div class="card h-100 shadow-sm" style="background-color: #f2f6ff;">
                     <div class="card-body">
@@ -222,19 +227,21 @@
                                 class="rounded-circle me-3" width="48" height="48">
                             <div>
                                 <div class="fw-bold text-dark">Nguyễn Văn A</div>
-                                <div class="text-muted" style="font-size: 0.95em;">Khách hàng thường xuyên</div>
+                                <div class="text-muted" style="font-size: 0.95em;">Khách thuê xe tự lái</div>
                             </div>
                         </div>
                         <div class="mb-2">
                             <span class="text-warning">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
                         </div>
                         <div class="fst-italic text-dark" style="font-size: 1em;">
-                            "Dịch vụ thuê xe Mehoa rất chuyên nghiệp, xe mới sạch sẽ và nhân viên hỗ trợ tận tình. Rất đáng
-                            tin cậy cho các chuyến đi xa."
+                            "Dịch vụ thuê xe tại MEHOA rất chuyên nghiệp, xe mới và đầy đủ tiện nghi. Tôi luôn tin tưởng khi
+                            cần di chuyển tự túc ở Đà Nẵng."
                         </div>
                     </div>
                 </div>
             </div>
+
+            <!-- Feedback 2 -->
             <div class="col-md-4 mb-3">
                 <div class="card h-100 shadow-sm" style="background-color: #f2f6ff;">
                     <div class="card-body">
@@ -243,19 +250,21 @@
                                 class="rounded-circle me-3" width="48" height="48">
                             <div>
                                 <div class="fw-bold text-dark">Trần Thị B</div>
-                                <div class="text-muted" style="font-size: 0.95em;">Doanh nhân</div>
+                                <div class="text-muted" style="font-size: 0.95em;">Du khách TP.HCM</div>
                             </div>
                         </div>
                         <div class="mb-2">
                             <span class="text-warning">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
                         </div>
                         <div class="fst-italic text-dark" style="font-size: 1em;">
-                            "Đặt xe online trên Mehoa cực kỳ dễ dàng, có thể chọn loại xe, thời gian thuê linh hoạt. Tôi rất
-                            hài lòng với dịch vụ!"
+                            "Tôi đặt tour Bà Nà Hills qua MEHOA, hướng dẫn viên thân thiện, dịch vụ trọn gói, không phải lo
+                            gì cả. Rất đáng giá!"
                         </div>
                     </div>
                 </div>
             </div>
+
+            <!-- Feedback 3 -->
             <div class="col-md-4 mb-3">
                 <div class="card h-100 shadow-sm" style="background-color: #f2f6ff;">
                     <div class="card-body">
@@ -264,20 +273,21 @@
                                 class="rounded-circle me-3" width="48" height="48">
                             <div>
                                 <div class="fw-bold text-dark">Lê Văn C</div>
-                                <div class="text-muted" style="font-size: 0.95em;">Người dùng tại TP.HCM</div>
+                                <div class="text-muted" style="font-size: 0.95em;">Khách doanh nhân</div>
                             </div>
                         </div>
                         <div class="mb-2">
                             <span class="text-warning">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
                         </div>
                         <div class="fst-italic text-dark" style="font-size: 1em;">
-                            "Xe giao đúng hẹn, giá cả hợp lý, có nhiều dòng xe để lựa chọn phù hợp với nhu cầu. Mình sẽ tiếp
-                            tục sử dụng dịch vụ của Mehoa."
+                            "Tôi đã nhiều lần thuê xe từ MEHOA cho chuyến công tác tại Đà Nẵng. Giá hợp lý, thủ tục nhanh và
+                            xe rất mới."
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
 
     </div>
 </template>
@@ -463,5 +473,4 @@ export default {
 
 .btn-slide.right {
     right: 0;
-}
-</style>
+}</style>

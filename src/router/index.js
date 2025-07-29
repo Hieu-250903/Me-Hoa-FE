@@ -13,6 +13,11 @@ const routes = [
         meta: { layout: "client" },
     },
     {
+        path: "/lien-he",
+        component: () => import("../components/Client/Contact/index.vue"),
+        meta: { layout: "client" },
+    },
+    {
         path: "/thue-xe-tu-lai",
         component: () => import("../components/Client/CarRent/index.vue"),
         meta: { layout: "client" },
