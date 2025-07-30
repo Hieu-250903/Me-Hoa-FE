@@ -64,14 +64,13 @@
                                 <span class="badge bg-info text-dark">{{ value.loai_xe }}</span>
 
                             </div>
-                            <div class="d-flex justify-content-between mt-3">
-                                <p style="font-size:20px"><b class="text-success align-items-center">{{ value.gia_thue
-                                }}</b>/ngày</p>
-                                <div>
-                                    <button class="btn btn-dark text-light">Thuê Ngay</button>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <div class="d-flex align-items-center" style="font-size:15px">
+                                    <b class="text-success mb-0">{{ value.gia_thue }}</b><span class="ms-1">/ngày</span>
                                 </div>
-
+                                <button class="btn btn-dark text-light">Thuê Ngay</button>
                             </div>
+
                         </div>
 
                     </div>
@@ -169,7 +168,8 @@
         <!-- Về chúng tôi -->
         <!-- Về chúng tôi -->
         <div class="card p-5 border-0 shadow-sm rounded-4" style="background-color: #000000;">
-            <h3 class="text-center text-uppercase fw-bold mb-5 text-light">Dịch vụ du lịch & thuê xe tự lái <span class="text-danger">ME</span>HOA</h3>
+            <h3 class="text-center text-uppercase fw-bold mb-5 text-light">Dịch vụ du lịch & thuê xe tự lái <span
+                    class="text-danger">ME</span>HOA</h3>
             <div class="row align-items-center">
                 <!-- Nội dung bên trái -->
                 <div class="col-md-7">
@@ -473,4 +473,5 @@ export default {
 
 .btn-slide.right {
     right: 0;
-}</style>
+}
+</style>
